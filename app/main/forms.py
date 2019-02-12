@@ -7,5 +7,5 @@ class Pitch(FlaskForm):
    Creates pitch form
    '''
    pitch = StringField('Pitch', validators=[DataRequired()])
-   category = TextAreaField('Category', validators=[Required()])
+   category = RadioField('Category', choices=[('product','#product'),('pickup','#pickup'),('project','#project'),('politics','#politics'),('misc','#misc')], default='misc')
    submit = SubmitField('Post')

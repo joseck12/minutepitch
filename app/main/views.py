@@ -4,7 +4,7 @@ from flask_login import login_required,current_user
 from .. import db
 from ..models import User,Pitch,Comments
 from flask_login import login_required
-from .forms import Pitch,Comment
+from .forms import Pitch
 
 @main.route('/home', methods=['GET','POST'])
 @login_required

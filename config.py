@@ -4,7 +4,7 @@ class Config:
     '''
     Docstring goes here
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ['DB_CONNECTION']
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://joseck:newpassword@localhost/watchlist'
     SECRET_KEY = os.environ['SECRET_KEY']
 
 class ProdConfig(Config):
