@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+   <title>{{ title }}</title>
+</head>
+<body>
+   <header>
+      <nav>
+         <p class="logo">1p</p>
+         <a href="{{ url_for('profile') }}">
+            <p class='icon'>
+               <i class="material-icons">person</i>
+            </p>
+         </a>
+      </nav>
+   </header>
+   {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages %}
+               <div class="main-message">
+                  {{ message }}
+               </div>
+            {% endfor %}
+         {% endif %}
+      {% endwith %}
+
+   {% block content %}
+   {% endblock %}
+</body>
+
+</html>

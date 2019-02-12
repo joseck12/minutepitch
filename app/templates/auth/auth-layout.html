@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+   
+   <title>Minute Pitch | {{ title }}</title>
+</head>
+<body>
+   <header>
+      <nav>
+         <a href="{{ url_for('auth.enter') }}"><p class="logo">1p</p></a>
+
+         {% if title == 'Welcome' %}
+            <a href="{{ url_for('auth.login')}}"><p class='btn' id='log-in'>Log In</p></a>
+         {% endif %}
+
+      </nav>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages %}
+               <div class="message">
+                  {{ message }}
+               </div>
+            {% endfor %}
+         {% endif %}
+      {% endwith %}
+
+      {% block content %}
+      
+      {% endblock %}
+      
+   </header>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

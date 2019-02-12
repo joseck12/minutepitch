@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+   <form method="POST" action="" class='pitch'>
+      {{ pitch.hidden_tag() }}
+      <fieldset>
+         <div>
+            {{ pitch.pitch(class='post-input')}}
+         </div>
+         <div class='choices'>
+            {{ pitch.category(class='checkbox')}}
+         </div>
+      </fieldset>
+      <div>
+         {{ pitch.submit(class='post-btn') }}
+      </div>
+   </form>
+{% endblock %}
