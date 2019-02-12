@@ -3,7 +3,7 @@ from . import main
 from flask_login import login_required,current_user
 from .. import db
 from ..models import User,Pitch,Comments
-from flask_login import login_user
+from flask_login import login_required
 from .forms import Pitch,Comment
 
 @main.route('/home', methods=['GET','POST'])
@@ -18,9 +18,9 @@ def index():
       pitch = Pitch(pitch = pitch_form.pitch.data, category = pitch_form.category.data, user=current_user)
 
       if pitch is not None:
-         pitch.save_pitch()   
+         pitch.save_pitch()
       else:
          flash('You must enter a pitch')
       flash('Your pitch was published')
-      
-   return render_template('home.html', title= title, pitch = pitch_form, comment = comment_form) 
+
+   return render_template('home.html', title= title, pitch = pitch_form, comment = comment_form)
