@@ -12,6 +12,6 @@ class Pitch(FlaskForm):
    submit = SubmitField('Post')
 class LoginForm(FlaskForm):
     # email = StringField('Your Email Address',validators=[Required(),Email()])
-    # password = PasswordField('Password',validators =[Required()])
+    password = PasswordField('Password',validators =[Required()])
     remember = BooleanField('Remember me')
     submit = SubmitField('Sign In')
