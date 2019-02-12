@@ -2,7 +2,7 @@ from flask import render_template,redirect,url_for,flash,request
 from . import main
 from flask_login import login_required,current_user
 from .. import db
-from ..models import User,Pitch,Comments
+from ..models import User
 from flask_login import login_required
 from .forms import Pitch
 
@@ -23,4 +23,4 @@ def index():
          flash('You must enter a pitch')
       flash('Your pitch was published')
 
-   return render_template('home.html', title= title, pitch = pitch_form, comment = comment_form)
+   return render_template('index.html', title= title, pitch = pitch_form, comment = comment_form)
