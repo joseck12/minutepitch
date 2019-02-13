@@ -20,7 +20,7 @@ def index():
       if pitch is not None:
          pitch.save_pitch()
       else:
-         flash('You must enter a pitch')
-      flash('Your pitch was published')
+         flash('A pitch is required')
+      flash('The pitch has been successfully published')
 
    return render_template('index.html', title= title, pitch = pitch_form, comment = comment_form)
