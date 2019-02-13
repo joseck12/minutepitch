@@ -1,15 +1,25 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,SubmitField,ValidationError,BooleanField,RadioField
-from wtforms.validators import DataRequired,Length,Email,EqualTo
+from wtforms import StringField,TextAreaField,SubmitField,BooleanField
+from wtforms.validators import Required
 
-class Pitch(FlaskForm):
-   '''
-   Creates pitch form
-   '''
-   category = RadioField('Category', choices=[('product','#product'),('pickup','#pickup'),('project','#project'),('politics','#politics'),('misc','#misc')], default='misc')
-   pitch = StringField('Pitch', validators=[DataRequired()])
-   submit = SubmitField('Post')
+class CategoryForm(FlaskForm):
+    category = TextAreaField('YOUR PITCH')
+    submit = SubmitField('SUBMIT')
 
-class Comment(FlaskForm):
-    pitch_comment = StringField('Pitch', validators=[DataRequired()])
-    submit = SubmitField('Post')
+
+class ContentForm(FlaskForm):
+    pitch = TextAreaField('WRITE YOUR PITCH')
+    submit = SubmitField('SUBMIT')
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField('COMMENT')
+    submit = SubmitField('SUBMIT')
+
+class PitchForm(FlaskForm):
+    content = TextAreaField('Pitch', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.', validators=[Required()])
+    submit = SubmitField('Submit')
