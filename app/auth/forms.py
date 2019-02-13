@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,ValidationError,BooleanField
 from wtforms.validators import DataRequired,Length,Email,EqualTo
 from app.models import User
+from wtforms import ValidationError
 
 class SignUp(FlaskForm):
    '''
@@ -17,7 +18,7 @@ class SignUp(FlaskForm):
 
       user = User.query.filter_by(username=username.data).first()
       if user:
-         raise ValidationError('That username exists!')
+         raise ValidationError('That username is taken!')
 
    def validate_email(self,email):
 
