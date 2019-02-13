@@ -3,19 +3,19 @@ from wtforms import StringField,TextAreaField,SubmitField,BooleanField
 from wtforms.validators import Required
 
 class CategoryForm(FlaskForm):
-    category = TextAreaField('YOUR PITCH')
-    submit = SubmitField('SUBMIT')
+    category = TextAreaField('Enter Pitch')
+    submit = SubmitField('Submit')
 
 
 class ContentForm(FlaskForm):
-    pitch = TextAreaField('WRITE YOUR PITCH')
-    submit = SubmitField('SUBMIT')
+    pitch = TextAreaField('Pitch')
+    submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):
-    comment = TextAreaField('COMMENT')
-    submit = SubmitField('SUBMIT')
+    comment = TextAreaField('Comment')
+    submit = SubmitField('Submit')
 
-class PitchForm(FlaskForm):  
+class PitchForm(FlaskForm):
     content = TextAreaField('Pitch', validators=[Required()])
     submit = SubmitField('Submit')
 
