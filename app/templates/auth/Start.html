@@ -1,11 +1,6 @@
 {% extends 'auth/auth-layout.html' %}
 {% block content %}
 
-   <div class="header-text">
-      <div class="welcome">
-         <h1>Test your<br>pitch</h1>
-         <p>Like and comment on other pitches.</p>
-      </div>
       <div class="form">
          <form method="POST" action="">
             {{ signup.hidden_tag() }}
@@ -34,7 +29,3 @@
    </div>
 
 {% endblock %}
-
-
-
-     
