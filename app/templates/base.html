@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-   <title>{{ title }}</title>
-</head>
-<body>
-   <header>
-      <nav>
-         <p class="logo">1p</p>
-         <a href="{{ url_for('profile') }}">
-            <p class='icon'>
-               <i class="material-icons">person</i>
-            </p>
-         </a>
-      </nav>
-   </header>
-   {% with messages = get_flashed_messages() %}
-         {% if messages %}
-            {% for message in messages %}
-               <div class="main-message">
-                  {{ message }}
-               </div>
-            {% endfor %}
-         {% endif %}
-      {% endwith %}
+{% extends 'bootstrap/base.html' %}
 
-   {% block content %}
-   {% endblock %}
-</body>
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='css/category.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/navabar.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-</html>
+{% endblock %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
