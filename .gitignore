@@ -1,2 +1,4 @@
-# Folders to ingore
 virtual/
+*pyc
+instance/
+*start.sh

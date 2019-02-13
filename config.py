@@ -1,25 +1,32 @@
 import os
+from flask import Flask
 
 class Config:
-    '''
-    Docstring goes here
-    '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://joseck:newpassword@localhost/watchlist'
-    SECRET_KEY = os.environ['SECRET_KEY']
-
+    SECRET_KEY = 'grESrtgb284gvfnfd58437bhb'
+    UPLOADED_PHOTOS_DEST = 'app/static/photos'
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get("jogachi4@gmail.com")
+    MAIL_PASSWORD = os.environ.get("fabianski")
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
 class ProdConfig(Config):
-    '''
-    Docstring goes here
-    '''
-    pass
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://joseck:newpassword@localhost/pitches"
 
-class DevConfig(Config):
-    '''
-    Docstring goes here
-    '''
     DEBUG = True
 
+
+class DevConfig(Config):
+    pass
+
+class TestConfig(Config):
+    pass
+
+
 config_options = {
-    'development':DevConfig,
-    'production':ProdConfig
+'development':DevConfig,
+'production':ProdConfig
+
+
 }
