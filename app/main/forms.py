@@ -11,5 +11,5 @@ class Pitch(FlaskForm):
    submit = SubmitField('Post')
 
 class Comment(FlaskForm):
-   pitch_comment = StringField('Pitch', validators=[DataRequired()]), render_kw={"placeholder": "Add comment"})
+    pitch_comment = StringField('Pitch', validators=[DataRequired()])
     submit = SubmitField('Post')
