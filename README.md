@@ -24,7 +24,7 @@ This is a Python web application that will allow users to register and create pi
     2. Install Python 3.6
     2. Install Flask
 
-## Running One Minute PItch
+## Running Minute Pitch
 On your terminal run
 - python3 manage.py Server
 
@@ -35,7 +35,7 @@ On your terminal run
 |--------|-----|------|
 |A click on the sign up button .| Enter your credentials . | An account is created for you.|
 |User wants to add a pitch .| Enter the pitch and then submit it.| Upon submission the pitch is published and displayed on the homepage.|
-| User wants to leave the site .| Click on the logout button .|They are taken to the welcome page .|
+| User wants to leave the site .| Click on the sign out button .|They are taken to the welcome page .|
 
 ## Known bugs
 
