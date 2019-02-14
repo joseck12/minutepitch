@@ -14,8 +14,8 @@ This is a Python web application that will allow users to register and create pi
 
     - Python 3.6
     - Flask Framework
-    - HTML and CSS
-    - JavaScript
+    - HTML and Bootstrap
+    - Jinja templates
 
 ## Set-up and Installation
 
@@ -23,6 +23,9 @@ This is a Python web application that will allow users to register and create pi
     2. in terminal cd your-dir/minutepitch
     2. Install Python 3.6
     2. Install Flask
+
+## Running One Minute PItch
+On your terminal run python3 manage.py Server
 
 ## Behavior Driven Development
 
