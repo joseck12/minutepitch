@@ -25,7 +25,8 @@ This is a Python web application that will allow users to register and create pi
     2. Install Flask
 
 ## Running One Minute PItch
-- On your terminal run python3 manage.py Server
+On your terminal run
+- python3 manage.py Server
 
 
 ## Behavior Driven Development
